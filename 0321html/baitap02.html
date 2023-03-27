@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculator</title>
+
+</head>
+<body>
+    <form>
+        <h3><b>Caculator</b></h3>
+        <input id="soThuNhat" type="number"/> <input id="soThuHai" type="number"/>
+        <br/>
+        <button type="button" onclick="Add()">Add(+)</button>
+        <button type="button" onclick="Sub()">Sub(-)</button>
+        <button type="button" onclick="Mul()">Mul(*)</button>
+        <button type="button" onclick="Divi()">Divi(/)</button>
+         
+        <div id="ketQua">
+
+        </div>
+
+        <script>
+            function Add(){
+                let = soThuNhat = document.getElementById("soThuNhat").value;
+                soThuNhat = parseInt(soThuNhat)
+                let = soThuHai = document.getElementById("soThuHai").value;
+                soThuHai = parseInt(soThuHai)
+                let Tong = soThuNhat + soThuHai;
+                document.getElementById("ketQua").innerHTML = "Result: Additon" + Tong;
+        
+            }
+            function Sub(){
+                let = soThuNhat = document.getElementById("soThuNhat").value;
+                soThuNhat = parseInt(soThuNhat)
+                let = soThuHai = document.getElementById("soThuHai").value;
+                soThuHai = parseInt(soThuHai)
+                let Tru = soThuNhat - soThuHai;
+                document.getElementById("ketQua").innerHTML = "Result: Additon" + Tru;
+        
+            }
+            function Mul(){
+                let = soThuNhat = document.getElementById("soThuNhat").value;
+                soThuNhat = parseInt(soThuNhat)
+                let = soThuHai = document.getElementById("soThuHai").value;
+                soThuHai = parseInt(soThuHai)
+                let Nhan = soThuNhat * soThuHai;
+                document.getElementById("ketQua").innerHTML = "Result: Additon" + Nhan;
+        
+            }
+            function Divi(){
+                let = soThuNhat = document.getElementById("soThuNhat").value;
+                soThuNhat = parseInt(soThuNhat)
+                let = soThuHai = document.getElementById("soThuHai").value;
+                soThuHai = parseInt(soThuHai)
+                let Chia = soThuNhat / soThuHai;
+                document.getElementById("ketQua").innerHTML = "Result: Additon" + Chia;
+        
+            }
+    
+        </script>
+        
+
+    </form>
+    
+    
+</body>
+</html>
