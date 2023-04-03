@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let N = parseInt(prompt("Nhap so: "));
+        let ketqua = 0;
+        
+        while (N > 0) {
+            sodu = N % 10;
+            ketqua = ketqua * 10 + sodu;
+            N = Math.floor(N / 10);
+
+        }
+        alert(ketqua);
+    </script>
+</body>
+</html>
