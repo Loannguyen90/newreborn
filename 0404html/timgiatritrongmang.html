@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getRandomArbitrary(min, max){
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+
+        //nhap so luong phan tu cua mang
+        let N = parseInt(prompt("Mang co bao nhieu phan tu"));
+        let giaTriTim = parseInt(prompt("Can tim"));
+
+        let mang = [];
+
+        //khoi tao ngau nhien n phan tu
+        for( let i = 0; i< N; i++){
+            mang.push(getRandomArbitrary(1, 55));
+        }
+        alert('Mang : ' + mang.join(","));
+        
+        let viTris = [];
+        for(let idx in mang){
+            if (mang[idx] === giaTriTim){
+                viTris.push(idx);
+
+            }
+        }
+        if(viTris.length > 0){
+            alert(`Tim thay ${giaTriTim} tai vi tri ${viTris}`);
+
+        }else{
+            alert(`khong tim thay ${giaTriTim} trong mang`);
+        }
+        
+
+        let min = mang[0];
+        let max = mang[0];
+        for (let idx = 1; idx < mang.length; idx++){
+            if(mang[idx] < min){
+                min = mang[idx];   
+            }
+            if(mang[idx] > max){
+                max = mang[idx];
+            }
+        }
+        alert(`Gia tri lon nhat ${max}, gia tri nho nhat${min}`);
+    </script>
+</body>
+</html>

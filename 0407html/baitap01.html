@@ -8,13 +8,15 @@
 </head>
 <body>
     <script>
-        let a = prompt("Nhập giá trị biến a");
-        let b = prompt("Nhập giá trị biến b");
-        if(a % b ==0){
-            alert('a chia hết cho b');
-        } else {
-            alert('a không chia hết cho b');
+        let myColor = ["Red", "Green", "White", "Black"];
+        //document.write(myColor);
+        let kq = "";
+        for (let idx in myColor){
+            kq += myColor[idx] + ",";
         }
+        alert(kq);
+
+        alert(myColor.join(","));
 
     </script>
 </body>

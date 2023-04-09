@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        Nhap so dong, so cot
+        Nhap gia tri tung o
+        in ra
+    </pre>
+    <script>
+        let soDong = parseInt(prompt("Nhap so dong :"));
+        let soCot = parseInt(prompt("Nhap so cot:"));
+        let mang2Chieu = new Array(soDong);
+        for(let index = 0; index < soDong;index++ ){
+            mang2Chieu[index] = new Array(soCot);
+
+        }
+        console.log("mang 2 chieu : ", mang2Chieu);
+        // duyet qua tung phan tu mang
+        for(let idong = 0; idong< mang2Chieu.length; dong++){
+            for(let icot = 0; iCot < soCot; iCot++){
+                mang2Chieu[idong][icot] = Math.random()*101
+
+            }
+        }
+        console.log(mang2Chieu);
+        for(let i = 0; i <soDong; i++){
+            let taoDong = document.createElement("tr");
+            for ( let e = 0; e < soCot; e++){
+                let taoCot = document.createElement("td");
+                taoCot.innerHTML = mang2Chieu[i][e];
+                taoDong.appendChild(taoCot);
+            }
+            bang.appendChild(taoDong);
+    
+        }
+    </script>
+</body>
+</html>

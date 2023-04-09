@@ -8,13 +8,15 @@
 </head>
 <body>
     <script>
-        let a = prompt("Nhập giá trị biến a");
-        let b = prompt("Nhập giá trị biến b");
-        if(a % b ==0){
-            alert('a chia hết cho b');
-        } else {
-            alert('a không chia hết cho b');
+        let chuoi = prompt("Nhap chuoi so");
+        let tmp = [];
+        for( let i= 0; i< chuoi.length; i++){
+            tmp.push(chuoi[i]);
+            if( chuoi[i]%2==0 && chuoi[i + 1]%2==0){
+                tmp.push("-");
+            }
         }
+        alert(tmp.join(""));
 
     </script>
 </body>

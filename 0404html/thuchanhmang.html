@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Sample Screen</h3>
+    <form>
+        <input id="nhap"/>
+        <button type="button" onclick="addItem()"> Add</button>
+        <button type="button" onclick="disPlay()">Display</button>
+        <div id="ketQua"></div>
+    </form>
+    <script>
+        let mang = [];//mang rong
+        function disPlay(){
+            let kq = "";
+            for(let index in mang){
+                kp += `Elemet ${index} = ${mang[index]}<br>`;
+            }
+            document.getElementById("ketQua").innerHTML = kq;
+            
+        }
+        
+
+
+        function addItem(){
+            let oNhap = document.getElementById("nhap");
+            
+            if(oNhap.value !== ""){
+                mang.push(oNhap.value);
+                alert("Element:" + mang[mang.length - 1] + "added at index" + (mang.length -1));
+                oNhap.value = "";
+                oNhap.focus(); // dua dau nhay vao control
+
+            }
+        }
+        
+
+    </script>
+   
+</body>
+</html>
