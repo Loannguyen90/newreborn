@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mybutton {
+            background-color: green;
+            color: white;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .nameproduct {
+            width: 250px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <pre>
+    Ứng dụng quản lý sản phẩm có các chức năng sau:
+      Hiển thị danh sách sản phẩm
+     Có thể thêm một sản phẩm mới vào danh sách
+     Có thể sửa tên của sản phẩm trong danh sách
+     Có thể xoá một sản phẩm khỏi danh sách
+    </pre>
+    <div>
+        <h2>Add new Product</h2>
+       <input id="addProductName"
+       placeholder="New Product"/>
+      <button type="button" class="mybutton" onclick="addproduct()">Add</button>
+    </div>
+    <div>
+        <h3>Display All Product</h3>
+    <div><span id="totalProduct">0</span>products</div>
+    <div id="listProductName">
+    </div>
+    </div>
+
+    <script>
+        let listProduct = [
+            {
+                id: uuid(),
+                name: "Samsung Note 21"
+            },
+            {
+                id: uuid(),
+                name: "Iphone 14 Pro Max 256Gb"
+
+            }];
+        document.getElementById('totalProduct').innerHTML = listProduct.length;
+
+        function uuid() {
+          var temp_url = URL.createObjectURL(new Blob());
+          var uuid = temp_url.toString();
+             URL.revokeObjectURL(temp_url);
+         return uuid.substr(uuid.lastIndexOf('/') + 1); // remove prefix (e.g. blob:null/, blob:www.test.com/, ...)
+         }
+
+        function addproduct() {
+            let product = document.getElementById("productName").value.trim();
+            if (product !== '') {
+                let newObj = {
+                    id: uuid(),
+                    name: product
+                }
+                listProduct.push(newObj);
+                console.log(listProduct);
+                document.getElementById("productName").value = '';
+                document.getElementById('totalProduct').innerHTML = listProduct.length;
+                displayOneProduct(newObj.id, newObj.name);
+            }
+        }
+
+        function findProductbyId(myuuid) {
+            let indexFound = -1;
+            for (let item in listProduct) {
+                if (listProduct[item].id === myuuid) {
+                    return idxItem;
+                } 
+            }
+            return -1; //khong tim thay
+            //ES6
+        }
+
+        function displayOneProduct(idx, productName1) {
+            let myDiv = document.createElement("div");
+            myDiv.id = idx;
+            let mySpan = document.createElement("span");
+            mySpan.innerHTML = productName1;
+            myDiv.appendChild(mySpan);
+
+            let editBtn = document.createElement("button");
+            editBtn.innerHTML = "Edit";
+            editBtn.className = "mybutton"
+            myDiv.appendChild(editBtn);
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.innerHTML = "Deleta";
+            deleteBtn.className = "mybutton";
+            deleteBtn.onclick = function () {
+                myDiv.remove();
+                //xoa sp theo idx
+                listProduct.splice(findProductbyId(idx), 1);
+                console.log(listProduct);
+                document.getElementById('totalProduct').innerHTML = listProduct.length;
+            }
+            myDiv.appendChild(deleteBtn);
+        
+            document.getElementById("listProductName").appendChild(myDiv);
+        }
+            function disPlay() {
+                for (let idx in listProduct) {
+                    displayOneProduct(listProduct[idx].id, listProduct[idx].name);
+                }
+            }
+        disPlay();
+        
+    </script>
+</body>
+</html>
