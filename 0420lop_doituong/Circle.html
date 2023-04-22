@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="themhinh()">Thêm</button>
+    <button>Màu</button>
+    <div id=""></div>
+    <canvas id="myCanvas" width="800" height="600" style="border: 1px solid blue;"></canvas>
+
+    <script>
+        function themhinh()
+         let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d")
+
+        class Circle {
+            constructor(radius, color) {
+                this.Radius = radius;
+                this.Color = color;
+
+            }
+            getRadius() {
+                return this.Radius;
+            }
+            getArea() {
+                return Math.pow(this.Radius, 2) * Math.PI;
+            }
+
+            toString() {
+                return`Tròn có R = ${this.getRadius()}, S=${this.getArea()}`;
+            }
+
+            draw(context) {
+                context.arc(this.Radius, this.Radius, this.radius, 0, 2 * Math.PI);
+                ctx.stroke();
+            }
+        }
+        let mangHinh = [];
+        mangHinh.push(new Circle(280, 'red'));
+        mangHinh.push(new Circle(180, 'yellow'));
+
+        for (let idx in mangHinh) {
+            console.log(mangHinh[idx].toString());
+            mangHinh[idx].draw(ctx);
+        }
+        function veHinh() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); {
+                for(let idx in mangHinh){
+                    mangHinh[idx].draw(ctx);
+                }
+            }
+            veHinh()
+
+        }
+        function themHinhMoi() {
+            let bankinh = parseInt(document.getElementById("banKinh").value);
+            mangHinh.push(new Circle(bankinh, 'blue'));
+            veHinh();
+        }
+        
+    </script>
+</body>
+</html>

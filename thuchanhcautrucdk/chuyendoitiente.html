@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=tr, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>   
+        </tr>
+        <tr>
+            <td>
+                <input id="money" type="number">
+            </td>
+            <td>
+                <select name="chooseAmount1">
+                    <option Value="VN">VietNam</option>
+                    <option Value="Usd">USD</option>
+                </select>
+            </td>
+            <td>
+                <select name="chooseAmount2">
+                    <option Value="VN">VietNam</option>
+                    <option Value="Usd">USD</option>
+                </select>
+
+            </td>
+            <td>
+                <button type="button" onclick="convert">Covert</button>
+            </td>
+        </tr>
+        <div id="Result"></div>
+    </table>
+    <script>
+        function convert() {
+            let amount = parseInt(document.getAnimations("money").value);
+            let usd = parseInt(document.getAnimations("chooseAmount2").value);
+            let vnd = parseInt(document.getAnimations("chooseAmount1").value);
+            if (usd) {
+                document.getElementById("Result").innerHTML = "Result :" + amout * 23000;
+            } else if (vnd) {
+                document.getElementById("Result").innerHTML = "Result :" + amount / 23000;
+            }
+
+        }
+    </script>
+</body>
+</html>
