@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="dongho">00:00:00</h3>
+    <button type="button" id="start" onclick="handleStart()">START</button>
+    <button type="button" id="lap">LAP</button>
+    <button type="button" id="stop">STOP</button>
+    <script>
+       let myInterVal = null;
+       let bntStart = document.getElementById("start");
+       let bntLap = document.getElementById("lap");
+       let bntStop = document.getElementById("stop");
+       let dongHo = document.getElementById("dongho");
+       bntStop.disable = true;
+       bntLap.disable = true;
+       let startTime = null;
+       setRunning(false);
+
+       function handleStart() {
+        //bntStart.disable = true;
+        //bntLap.disable = true;
+        //bntStop.disable = false;
+        setRunning(true);
+        startTime = new Date();
+        myInterVal = setInterval(displayTime, 100);
+       }
+
+       function displayTime() {
+        let timeDistance = new Date(new Date() - startTime);
+        dongHo.innerHTML = timeDistance.getHours() + ':' + timeDistance.getMinutes() + ':' + timeDistance.getSeconds() + ':' + timeDistance.getMilliseconds();
+       }
+       function handleStop() {
+        clearInterval(myInterVal);
+        setRunning(false)
+
+       }
+
+    </script>    
+</body>
+</html>

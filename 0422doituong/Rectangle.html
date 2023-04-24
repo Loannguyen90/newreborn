@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="800" height="600" style="border: 1px solid blue;"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        //ve tren mat phong Oxy;
+        let ctx = canvas.getContext("2d");
+
+        class Rectangle {
+            constructor(dai, rong) {
+                this.Dai = dai;
+                this.Rong = rong;
+            }
+            tinhDienTich() {
+                return this.Dai * this.Rong;
+            }
+            tinhChiVi() {
+                return (this.Dai + this.Rong) * 2;
+            }
+            ve(context) {
+                ctx.beginPath();
+                ctx.fillStyle = "red";
+                context.fillRect(100, 200, this.Dai, this.Rong)
+            }
+
+        }
+
+        let h1 = new Rectangle(70,20);
+        console.log(h1.tinhDienTich(), h1.tinhChiVi());
+        h1.ve(ctx);
+    
+    </script>
+</body>
+</html>
