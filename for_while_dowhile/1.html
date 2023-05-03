@@ -7,13 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>JavaScript Loops</h2>
+    <p id="demo"></p>
     <script>
-        let value = null;
-        do {
-    value = prompt("Nhập vào số từ 1 -> 10");
-} while (value < 1 || value > 10);
-alert("Số bạn vừa nhập là " + value);
-
+    let text = "";
+    let i;
+    for (i = 0; i < 5; i++) {
+        text += "The number is " + i + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
     </script>
+
 </body>
 </html>

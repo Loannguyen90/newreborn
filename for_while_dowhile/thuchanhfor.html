@@ -7,15 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="demo"></p>
     <script>
-        let noidung = prompt("Nhập một số bất kỳ");
-        let tong = 0;
-        while (noidung != -1) {
-            noidung = prompt("Nhập tiếp một số bất kỳ");
-            alert(noidung);
-            tong = tong + noidung;     
+        let text = "";
+        let i ;
+        for(i = 0; i< 5; i++) {
+            text += "This number is" +  i  + "<br>";
         }
-        alert (tong);
+        document.getElementById("demo").innerHTML = text;
     </script>
 </body>
 </html>
